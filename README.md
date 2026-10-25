@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-Offline read-only etcd configuration, RBAC, encryption-at-rest and snapshot security auditor
+OEtcdX — etcd Key-Value Store Configuration Auditor. It provides stdlib YAML subset parser; etcd.conf.yml, ETCD_* env, systemd ExecStart flags, static-pod etcd.yaml args; Client & peer transport — http, 0.0.0.0, client-cert- auth, auto-tls, trusted CA, CN allow-list, ciphers. Built-in demo/self-test paths and severity gates help validate detections without touching production when those flags are used.
 
 ---
 
@@ -30,8 +30,6 @@ Offline read-only etcd configuration, RBAC, encryption-at-rest and snapshot secu
 - Kubernetes EncryptionConfiguration & kube-apiserver → etcd link: identity provider, missing secrets, keys
 - pprof, debug logging, public metrics, v2 API, CORS, unsafe-no-fsync, force-new-cluster, experimental flags
 - data-dir 0700, WAL / db / snapshot backups, key perms
-- Secrets masked; --root mapping; CWE + MITRE ATT&CK
-- TXT / MD / JSON / CSV / SARIF, --demo, --fail-on gates
 
 ---
 
@@ -45,7 +43,10 @@ Offline read-only etcd configuration, RBAC, encryption-at-rest and snapshot secu
 ## 🚀 Usage
 
 ```bash
-./OEtcdX
+./OEtcdX <paths>
+./OEtcdX <paths> --
+./OEtcdX <paths> --root
+./OEtcdX --help
 ```
 
 ---
